@@ -1,0 +1,18 @@
+.signin-container{
+      display: flex;
+      justify-content: center;
+      margin-top:100px;
+}
+form{
+      border: 1px solid #eee;
+      padding: 12px;
+      box-shadow: 0px 0px 20px 3px #ddd;
+}
+.signin-container input{
+      width:90vw;
+      max-width: 320px;
+}
+
+.signin-container h1{
+      text-align: center;
+}

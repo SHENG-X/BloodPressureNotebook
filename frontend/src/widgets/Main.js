@@ -26,13 +26,11 @@ export default class Main extends Component{
       }
       render(){
             return(
-                  <div>
-                        <MainIN/>
+                  <div className = 'main-page'>
                         <div className = 'dislist-container'>
                         {this.state.data.map(val => <MainDS {...val}/>)}
                         </div>
-                        
-
+                        <MainIN/>
                   </div>
             );
       }

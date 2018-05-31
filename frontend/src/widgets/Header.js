@@ -11,7 +11,7 @@ export default class Header extends Component{
       render(){
             return(
                   <div className = 'header-container'>
-                        <h2>{this.state.appname}</h2>
+                        <h2 className='app-title'>{this.state.appname}</h2>
                   </div>
             );
       }

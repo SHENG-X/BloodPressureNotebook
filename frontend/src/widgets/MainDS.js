@@ -6,8 +6,13 @@ export default class MainDS extends Component{
             const {date, systolic, diastolic, pulse} = {...this.props}
             return(
                   <div className = 'dis-container'>
-                        <div className = 'dis-date'>
-                              <h3>{date}</h3>
+                        <div className = 'time-color-container' >
+                              <div className = 'color-indicator'>
+                                    <div className = 'color-shape'></div>
+                              </div>
+                              <div className = 'dis-date'>
+                                    <h3>{date}</h3>
+                              </div>
                         </div>
                         <div className = 'dis-detail'>
                                     <li>{systolic}<hr/>SYS</li>

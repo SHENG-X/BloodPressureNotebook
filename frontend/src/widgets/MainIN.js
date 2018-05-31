@@ -49,7 +49,6 @@ export default class MainIN extends Component{
                   <div className = 'main-input-container'>
                         <form onSubmit = {(e) => this.saveData(e)}>
                               <div className = "form-group">
-                                    <label htmlFor = 'sys'></label>
                                     < input type = 'number'
                                     placeholder = 'systolic'
                                     name = 'systolic'
@@ -58,7 +57,6 @@ export default class MainIN extends Component{
                                     className = 'form-control' />
                               </div>
                               <div className = "form-group">
-                                    <label htmlFor = 'dia'></label>
                                     <input type = 'number' 
                                     placeholder = 'diastolic'
                                     name = 'diastolic'
@@ -66,7 +64,6 @@ export default class MainIN extends Component{
                                     className = 'form-control'/>
                               </div>
                               <div className = "form-group">
-                                    <label htmlFor = 'bpm'></label>
                                     < input type = 'number'
                                     placeholder = 'pulse'
                                     name = 'pulse'

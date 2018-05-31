@@ -1,3 +1,4 @@
+
 .dis-container{
       display: flex;
       flex-direction: row;
@@ -5,7 +6,10 @@
       justify-content: space-around;
       margin: 5px;
       margin-top: 10px;
-      box-shadow: 0 0 2px 2px black;
+      box-shadow: 0 0 2px 2px #bbb;
+      margin-left: 8px;
+      margin-right: 8px;
+      border-radius: 3px;
 }
 
 .dis-container .dis-detail li{
@@ -30,10 +34,59 @@ hr{
 
 .main-input-container{
       margin:4px;
-      box-shadow: 0 0 1px 2px blue;
-      height: 282px;
+      margin-left: 8px;
+      margin-right: 8px;
+      box-shadow: 0 0 1px 2px #eee;
+      height:223px;
+      border-radius: 5px;
 }
+.main-input-container div{
+      margin: 0;
+      padding: 0;
+      margin-top: 15px;
+}
+
+.main-input-container input[type=number]:focus {
+      border: 1px solid rgba(255, 165, 48, 0.932);
+      box-shadow: 0 0 8px rgba(255, 165, 48, 0.932);
+}
+.main-input-container input[type=submit] {
+      background: rgba(255, 165, 48, 0.932);
+      border-radius: 3px;
+      border: none;
+}
+.main-input-container input[type=submit]:hover {
+      background: rgba(248, 147, 15, 0.932);
+      box-shadow: 0 0 8px rgba(253, 167, 55, 0.932);
+}
+.main-input-container input[type=submit]:focus {
+      background: rgba(245, 168, 69, 0.932);
+      outline:rgba(248, 156, 36, 0.932);
+      box-shadow: 0 0 10px rgba(253, 167, 55, 0.932);
+}
+
 .dislist-container {
       overflow: auto;
-      height: calc(100vh - 348px);
+      height: calc(100vh - 288px);
+} 
+
+.color-shape{
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background: red;
+      margin: 0;
+      padding: 0;
+}
+
+.color-indicator{
+      margin: 0;
+      padding: 0;
+      width: 35px;
+      margin-right: 12px;
+}
+.time-color-container{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 }

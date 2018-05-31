@@ -18,3 +18,27 @@ form {
 .signup-container h1 {
       text-align: center;
 }
+
+
+.signup-container input[type=submit] {
+      background: rgba(255, 165, 48, 0.932);
+      border-radius: 3px;
+      border: none;
+}
+
+.signup-container input[type=submit]:hover {
+      background: rgba(248, 147, 15, 0.932);
+      box-shadow: 0 0 8px rgba(253, 167, 55, 0.932);
+}
+
+.signup-container input[type=submit]:focus {
+      background: rgba(245, 168, 69, 0.932);
+      outline: rgba(248, 156, 36, 0.932);
+      border: none;
+      box-shadow: 0 0 10px rgba(253, 167, 55, 0.932);
+}
+
+.signup-container input:focus {
+      border: 1px solid rgba(255, 165, 48, 0.932);
+      box-shadow: 0 0 8px rgba(255, 165, 48, 0.932);
+}

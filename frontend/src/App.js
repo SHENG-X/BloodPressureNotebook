@@ -11,8 +11,9 @@ class App extends Component {
     return (
       <div className = 'app-container'>
         <Header/>
-        <Main/>
-
+        {/* <Main/> */}
+        {/* <SignUp/> */}
+        <SignIn/>
       </div>
     );
   }

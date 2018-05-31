@@ -13,7 +13,7 @@ export default class Header extends Component{
                         <form>
                               <h1> BPNotebook </h1>
                               <div className = "form-group">
-                                    < input type = 'text'
+                                    < input type = 'email'
                                     placeholder = 'EMAIL'
                                     className = 'form-control' />
                               </div>

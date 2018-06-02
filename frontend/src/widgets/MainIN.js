@@ -14,7 +14,7 @@ export default class MainIN extends Component{
                   diastolic: '',
                   pulse: '',
                   changeHandler: this.changeHandler.bind(this),
-                  saveData: this.saveData.bind(this)
+                  saveData: this.saveData.bind(this),
             }
       }
       changeHandler(e){
@@ -31,17 +31,49 @@ export default class MainIN extends Component{
                   alert(error.details[0].message);
             }else{
                   console.log({...this.state});
-                  axios({
-                        method: 'post',
-                        url: 'http://localhost:8080/api',
-                        data: {
-                              systolic: this.state.systolic,
-                              diastolic: this.state.diastolic,
-                              pulse: this.state.pulse                              
+                  // axios({
+                  //       method: 'post',
+                  //       url: 'http://localhost:8080/api',
+                  //       data: {
+                  //             systolic: this.state.systolic,
+                  //             diastolic: this.state.diastolic,
+                  //             pulse: this.state.pulse                              
+                  //       }
+                  // })
+                  // .then()
+                  // .catch(err => console.log(err.message));
+                  let systolic = this.state.systolic;
+                  let diastolic = this.state.diastolic;
+                  let pulse = this.state.pulse;
+                  let date = new Date();
+                  let year = date.getFullYear();
+                  let month = date.getMonth() + 1;
+                  if(month < 10){
+                        month = '0' + month;
+                  }
+                  let day = date.getDate();
+                  if(day < 10){
+                        day = '0' + day;
+                  }
+                  date = year + '/' + month + '/' + day;
+
+                  if(window.indexedDB){
+                        var db = null, request = window.indexedDB.open('healthDB', 2);
+                        request.onsuccess = function(){
+                              db = request.result;
+                              var transaction = db.transaction(['Store'], 'readwrite');
+                              var store =  transaction.objectStore('Store');
+                              let data = store.getAll();
+                              data.onsuccess = function(event){
+                                    let indexId = event.target.result + 1;
+                                    console.log(indexId);
+                                    store.add({'id':indexId, 'systolic': systolic, 'diastolic': diastolic, 'pulse': pulse, 'date': date});
+                              }
+                              
+                              
                         }
-                  })
-                  .then()
-                  .catch(err => console.log(err.message));
+                  }
+                  this.props.addData({'systolic': systolic, 'diastolic': diastolic, 'pulse': pulse, 'date': date});
             }
       }
       render(){
@@ -52,7 +84,7 @@ export default class MainIN extends Component{
                                     < input type = 'number'
                                     placeholder = 'systolic'
                                     name = 'systolic'
-                                    value = {this.state.systolic}
+                                    // value = {this.state.systolic}
                                     onChange = {(e) => this.changeHandler(e)}
                                     className = 'form-control' />
                               </div>

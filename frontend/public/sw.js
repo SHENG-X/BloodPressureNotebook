@@ -1,12 +1,14 @@
 self.addEventListener('install', function(event){
       console.log('Service Worker Installed!', event);
         event.waitUntil(
-              caches.open('static').then(function (cache) {
+              caches.open('static-v2').then(function (cache) {
                     return cache.addAll([
                           '/',
+                          '/index.html',
                           '/app-sw.js',
+                          '/favicon.ico',
                           'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-                          '/static/js/bundle.js',
+                          '/static/js/bundle.js'
                     ]);
               })
         );
@@ -27,7 +29,7 @@ self.addEventListener('fetch',
             // Prevent the default, and handle the request ourselves.
             event.respondWith(async function () {
                   // Try to get the response from a cache.
-                  const cache = await caches.open('static');
+                  const cache = await caches.open('static-v2');
                   const cachedResponse = await cache.match(event.request);
 
                   if (cachedResponse) {

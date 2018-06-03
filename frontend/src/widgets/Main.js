@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
 import MainIN from './MainIN'
-import MainDS from './MainDS'
 import MainDSList from './MainDSList'
 import '../css/main.css'
-import axios from 'axios'
 
 const COLOR_CODE_MAP ={
       NORMAL:'#',
@@ -17,13 +15,6 @@ export default class Main extends Component{
             super(props);
             this.state = {
                   data:[
-                        // {'systolic':123, 'diastolic':111, 'pulse': 222, 'date':'2018/02/21'},
-                        // {'systolic':123, 'diastolic':111, 'pulse': 222, 'date':'2018/02/21'},
-                        // {'systolic':123, 'diastolic':111, 'pulse': 222, 'date':'2018/02/21'},
-                        // {'systolic':123, 'diastolic':111, 'pulse': 222, 'date':'2018/02/21'},
-                        // {'systolic':123, 'diastolic':111, 'pulse': 222, 'date':'2018/02/21'},
-                        // {'systolic':123, 'diastolic':111, 'pulse': 222, 'date':'2018/02/21'},
-                        // {'systolic':123, 'diastolic':111, 'pulse': 222, 'date':'2018/02/21'}
                   ],
                   colorSchema: this.colorSchema.bind(this),
                   addData: this.addData.bind(this)
@@ -72,7 +63,6 @@ export default class Main extends Component{
                   request.onupgradeneeded = function () {
                         db = request.result;
                         var objStore = db.createObjectStore("Store", {keyPath: "id"});
-
                   };
                   request.onsuccess = ()=>{
                         try{

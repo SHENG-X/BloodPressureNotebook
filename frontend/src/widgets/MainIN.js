@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 const Joi = require('joi');
-const axios = require('axios');
 const schema = {
       systolic: Joi.number().integer(),
       diastolic: Joi.number().integer(),
@@ -31,17 +30,7 @@ export default class MainIN extends Component{
                   alert(error.details[0].message);
             }else{
                   console.log({...this.state});
-                  // axios({
-                  //       method: 'post',
-                  //       url: 'http://localhost:8080/api',
-                  //       data: {
-                  //             systolic: this.state.systolic,
-                  //             diastolic: this.state.diastolic,
-                  //             pulse: this.state.pulse                              
-                  //       }
-                  // })
-                  // .then()
-                  // .catch(err => console.log(err.message));
+                
                   let systolic = this.state.systolic;
                   let diastolic = this.state.diastolic;
                   let pulse = this.state.pulse;

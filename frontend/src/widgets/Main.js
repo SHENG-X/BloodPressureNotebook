@@ -26,25 +26,31 @@ export default class Main extends Component{
             console.log('Callllllled');
             console.log(data);
             console.log('Callllllled--------->');
+            var color;
             if (data['systolic'] < 120 && data['diastolic'] < 80) {
                   //normal
                   console.log('normall');
+                  color = '#8BC34A';
             }
             else if (data['systolic'] >= 120 && data['systolic'] <= 129 && data['diastolic'] <= 80) {
                   //elavated
                   console.log('elavated');
+                  color = '#FFC107';
             }
             else if (data['systolic'] >= 130 && data['systolic'] <= 139 && data['diastolic'] > 80 && data['diastolic'] <= 89) {
                   //stage one high
                   console.log('stage 1 high');
+                  color = '#FFCDD2';
             }
             else if (data['systolic'] >= 140 && data['diastolic'] >= 90) {
                   //stage two high
                   console.log('stage 2 high');
+                  color = '#F44336';
             }
             else{
                   console.log('wrong data');
             }
+            return color;
       }
        addData(val){
             // let prevdata = this.state.data;
@@ -74,6 +80,8 @@ export default class Main extends Component{
                               data.onsuccess = (event) => {
                                     event.target.result.forEach((d) => {
                                           //console.log(this.state.data);
+                                          let c = this.colorSchema(d);
+                                          d['bkcolor']=c;
                                           healtinfo.push(d);
                                           console.log(d);
                                           this.setState({ ...this.state,

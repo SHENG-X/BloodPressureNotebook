@@ -62,7 +62,7 @@ export default class MainIN extends Component{
                               
                         }
                   }
-                  this.props.addData({'systolic': systolic, 'diastolic': diastolic, 'pulse': pulse, 'date': date});
+                  this.props.addData({'id':Date.now(), 'systolic': systolic, 'diastolic': diastolic, 'pulse': pulse, 'date': date});
             }
       }
       render(){

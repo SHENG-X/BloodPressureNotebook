@@ -13,7 +13,9 @@ export default class MainDS extends Component{
                     var objectStore = transaction.objectStore("Store");
                     var objectStoreRequest = objectStore.delete(+id);
                     objectStoreRequest.onsuccess = function (event) {
-                          alert('item deleted');
+                          if(id!=''){
+                              alert('Item: ' + id + ' deleted!');
+                          }
                     }
 
             }
@@ -21,16 +23,16 @@ export default class MainDS extends Component{
       render(){
             const {id, date, systolic, diastolic, pulse, bkcolor} = {...this.props}
             return(
-                  <div className = 'dis-container' id={id} onClick={(e)=>this.deleteRecord(e)}>
-                        <div className = 'time-color-container' >
+                  <div className = 'dis-container' id={id}  onClick={(e)=>this.deleteRecord(e)}>
+                        <div className = 'time-color-container'  >
                               <div className = 'color-indicator'>
                                     <div className = {bkcolor}></div>
                               </div>
-                              <div className = 'dis-date'>
+                              <div className = 'dis-date' >
                                     <h3>{date}</h3>
                               </div>
                         </div>
-                        <div className = 'dis-detail'>
+                        <div className = 'dis-detail' >
                                     <li>{systolic}<hr/>SYS</li>
                                     <li>{diastolic}<hr/>DIA</li>
                                     <li>{pulse}<hr/>BPM</li>

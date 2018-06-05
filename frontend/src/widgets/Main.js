@@ -30,33 +30,42 @@ export default class Main extends Component{
             if (data['systolic'] < 120 && data['diastolic'] < 80) {
                   //normal
                   console.log('normall');
-                  color = '#8BC34A';
+                  //color = '#8BC34A';
+                  color = 'color-shape-0';
+
             }
             else if (data['systolic'] >= 120 && data['systolic'] <= 129 && data['diastolic'] <= 80) {
                   //elavated
                   console.log('elavated');
                   color = '#FFC107';
+                  color = 'color-shape-1';
+
             }
             else if (data['systolic'] >= 130 && data['systolic'] <= 139 && data['diastolic'] > 80 && data['diastolic'] <= 89) {
                   //stage one high
                   console.log('stage 1 high');
-                  color = '#FFCDD2';
+                  // color = '#FFCDD2';
+                  color = 'color-shape-2';
+
             }
             else if (data['systolic'] >= 140 && data['diastolic'] >= 90) {
                   //stage two high
                   console.log('stage 2 high');
-                  color = '#F44336';
+                  // color = '#F44336';
+                  color = 'color-shape-3';
+
             }
             else{
-                  console.log('wrong data');
+                  color = 'color-shape-de';
             }
             return color;
       }
        addData(val){
             // let prevdata = this.state.data;
             // let updated = prevdata.append(val);
-            this.colorSchema(val);
+            let c= this.colorSchema(val);
             let updated = this.state.data;
+            val['bkcolor']=c;
             updated.push(val);
             //console.log(this.state.data);
             this.setState(updated);
@@ -100,19 +109,10 @@ export default class Main extends Component{
             }
       }
 
-      async componentWillMount(){
-            // axios.get('http://localhost:8080/api')
-            // .then(data => console.log(data))
-            // .catch(err => console.log(err.message))
-            
-            
-      }
-
       async componentDidMount(){
                 this.getData();
       }
 
-    
        render(){
             return(
                   <div className = 'main-page'>

@@ -54,7 +54,7 @@ export default class MainIN extends Component{
                               var store =  transaction.objectStore('Store');
                               let data = store.getAll();
                               data.onsuccess = function(event){
-                                    let indexId = event.target.result + 1;
+                                    let indexId = event.target.result.length + 1;
                                     console.log(indexId);
                                     store.add({'id':indexId, 'systolic': systolic, 'diastolic': diastolic, 'pulse': pulse, 'date': date});
                               }

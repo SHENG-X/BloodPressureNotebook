@@ -77,7 +77,7 @@ hr{
       height: calc(100vh - 288px);
 } 
 
-.color-shape{
+.color-shape-de{
       height: 30px;
       width: 30px;
       border-radius: 50%;
@@ -86,6 +86,38 @@ hr{
       padding: 0;
 }
 
+.color-shape-0 {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background: #8BC34A;
+      margin: 0;
+      padding: 0;
+}
+.color-shape-1 {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background: #FFC107;
+      margin: 0;
+      padding: 0;
+}
+.color-shape-2 {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background: #FFCDD2;
+      margin: 0;
+      padding: 0;
+}
+.color-shape-3 {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background: #F44336;
+      margin: 0;
+      padding: 0;
+}
 .color-indicator{
       margin: 0;
       padding: 0;
